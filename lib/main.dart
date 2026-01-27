@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_card/screens/explore_screen.dart';
 import 'package:quiz_card/screens/home_screen.dart';
 import 'package:quiz_card/screens/join_screen.dart';
 import 'package:quiz_card/screens/login_screen.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: ExploreScreen(),
     );
   }
 }

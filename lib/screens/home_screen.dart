@@ -1,11 +1,21 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:quiz_card/screens/join_screen.dart';
 import 'package:quiz_card/widgets/app_button.dart';
 import 'package:quiz_card/widgets/app_appbar.dart';
-import 'package:quiz_card/widgets/custom_bottom_nav.dart';
+import 'package:quiz_card/widgets/app_bottombar.dart';
+import 'package:quiz_card/widgets/home_imagebutton.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +24,49 @@ class HomeScreen extends StatelessWidget {
       appBar: DefaultAppBar(title: 'Mystic Deck', onBack: (){} , onMenu: () => ()),
       body: Stack(
         children: [
+
+          Container(
+            width: double.infinity,
+            height: double.infinity,
+            color: const Color(0xFFF3E5F5),
+          ),
+
+          // Left kite
           Positioned(
-            top: 100,
-            left: 0,
-            right: 0,
-            child: Opacity(
-              opacity: 0.3,
+            height: 120,
+            width: 120,
+            left: 15,
+            top: 150,
+            child: Transform.rotate(
+              angle: -pi / -10,
+              child: Opacity(opacity: 0.5, child: Image.asset('assets/kite.png')),
             ),
           ),
+
+          // Center kite
+          Positioned(
+            height: 330,
+            width: 330,
+            right: 15,
+            top: 40,
+            child: Transform.rotate(
+              angle: pi / 5,
+              child: Opacity(opacity: 0.5, child: Image.asset('assets/kite.png')),
+            ),
+          ),
+
+          // Right kite
+          Positioned(
+            height: 120,
+            width: 120,
+            right: 50,
+            top: 300,
+            child: Transform.rotate(
+              angle: pi / 3,
+              child: Opacity(opacity: 0.5, child: Image.asset('assets/kite.png')),
+            ),
+          ),
+
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -56,11 +101,24 @@ class HomeScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      _buildStatCard(Icons.flag, 'Points'),
-                      _buildStatCard(Icons.hourglass_empty, 'Duration'),
-                      _buildStatCard(Icons.groups, 'Stats'),
+                      homeImageButton(
+                        image: 'assets/home_iconButtons/points.png',
+                        label: 'Points',
+                        onTap: () {},
+                      ),
+                      homeImageButton(
+                        image: 'assets/home_iconButtons/duration.png',
+                        label: 'Duration',
+                        onTap: () {},
+                      ),
+                      homeImageButton(
+                        image: 'assets/home_iconButtons/stats.png',
+                        label: 'Stats',
+                        onTap: () {},
+                      ),
                     ],
                   ),
+
                   const SizedBox(height: 30),
 
                   Container(
@@ -89,7 +147,18 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: const CustomBottomNav(),
+      bottomNavigationBar: BottomNavBar(
+        currentIndex: currentIndex,
+        onTap: (index) {
+          setState(() {
+            currentIndex = index;
+          });
+
+          // TODO: navigate later
+          // Example:
+          // if (index == 1) Navigator.push(...)
+        },
+      ),
     );
   }
 

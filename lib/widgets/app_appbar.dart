@@ -30,7 +30,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
 
       leading: onBack != null
           ? IconButton(
-        icon: const Icon(Icons.arrow_back_ios_new),
+        icon: Image.asset('assets/back.png'),
         color: Colors.white,
         onPressed: onBack,
       )
@@ -66,7 +66,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
 
         if (onMenu != null)
           IconButton(
-            icon: const Icon(Icons.menu, size: 32),
+            icon: Image.asset('assets/menu.png'),
             color: Colors.white,
             onPressed: onMenu,
           ),
