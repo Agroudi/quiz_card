@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:quiz_card/screens/signup_screen.dart';
 import 'package:quiz_card/widgets/app_button.dart';
 import 'login_screen.dart';
 
@@ -150,7 +151,7 @@ class WelcomeScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const LoginScreen(),
+                          builder: (_) => LoginScreen(),
                         ),
                       );
                     },
@@ -176,7 +177,7 @@ class WelcomeScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (_) => const LoginScreen(),
+                          builder: (_) => SignupScreen(),
                         ),
                       );
                     },

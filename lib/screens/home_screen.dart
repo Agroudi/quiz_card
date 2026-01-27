@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_card/widgets/app_button.dart';
-import 'package:quiz_card/widgets/custom_app_bar.dart';
+import 'package:quiz_card/widgets/app_appbar.dart';
 import 'package:quiz_card/widgets/custom_bottom_nav.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF3D5FB),
-      appBar: const CustomAppBar(title: 'Mystic Deck'),
+      appBar: DefaultAppBar(title: 'Mystic Deck', onBack: () => (), onMenu: () => ()),
       body: Stack(
         children: [
           Positioned(
@@ -19,11 +19,6 @@ class HomeScreen extends StatelessWidget {
             right: 0,
             child: Opacity(
               opacity: 0.3,
-              child: Image.asset(
-                '',
-                height: 300,
-                fit: BoxFit.contain,
-              ),
             ),
           ),
           SingleChildScrollView(
@@ -78,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         _buildUserRow('Ahmed', '700', true),
-                        _buildUserRow('AbdElrahman', '500', false),
+                        _buildUserRow('Abdelrahman', '500', false),
                         _buildUserRow('Mario', '500', true),
                         _buildUserRow('Wael', '400', false),
                         _buildUserRow('Nader', '300', true),

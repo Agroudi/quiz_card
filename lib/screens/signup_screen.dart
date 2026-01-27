@@ -1,20 +1,22 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quiz_card/screens/home_screen.dart';
 import 'package:quiz_card/widgets/app_button.dart';
 import 'package:quiz_card/widgets/app_formfield.dart';
+import 'login_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _SignupScreenState extends State<SignupScreen> {
   final _formKey = GlobalKey<FormState>();
 
+  final nameController = TextEditingController();
+  final ageController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -37,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 // 🌸 Flowers & Lion (UNCHANGED)
                 Positioned(
-                  top: 145,
+                  top: 85,
                   left: -17,
                   child: Transform.rotate(
                     angle: -pi / 5,
@@ -45,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Positioned(
-                  top: 145,
+                  top: 85,
                   right: -13,
                   child: Transform.rotate(
                     angle: pi / 5,
@@ -53,13 +55,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
                 Positioned(
-                  top: 40,
+                  top: -20,
                   left: size.width / 2 - 165,
                   child: Image.asset('assets/lion.png', width: 280),
                 ),
 
                 Padding(
-                  padding: const EdgeInsets.only(top: 325),
+                  padding: const EdgeInsets.only(top: 260),
                   child: Form(
                     key: _formKey,
                     child: Column(
@@ -77,18 +79,41 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         const SizedBox(height: 9),
 
-                        const Text(
-                          'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                          textAlign: TextAlign.center,
-                          maxLines: 4,
-                          style: TextStyle(
-                            color: Color(0xFF7A1FA0),
-                            fontSize: 14,
-                            height: 1.4,
-                          ),
+                        DefaultFormField(
+                          controller: nameController,
+                          label: "Name",
+                          hintText: "Enter your name",
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Name is required';
+                            }
+                            if (!RegExp(r'^[a-zA-Z\s]+$')
+                                .hasMatch(value)) {
+                              return 'Name must contain letters only';
+                            }
+                            return null;
+                          },
                         ),
 
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 10),
+
+                        DefaultFormField(
+                          controller: ageController,
+                          label: "Age",
+                          hintText: "Enter your age",
+                          keyboardType: TextInputType.number,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return 'Age is required';
+                            }
+                            if (!RegExp(r'^\d{2}$').hasMatch(value)) {
+                              return 'Age must be 2 digits';
+                            }
+                            return null;
+                          },
+                        ),
+
+                        const SizedBox(height: 10),
 
                         DefaultFormField(
                           controller: emailController,
@@ -108,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
 
-                        const SizedBox(height: 21),
+                        const SizedBox(height: 10),
 
                         DefaultFormField(
                           controller: passwordController,
@@ -136,10 +161,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
 
-                        const SizedBox(height: 17),
+                        const SizedBox(height: 20),
 
                         AppButton(
-                          text: 'Log In',
+                          text: 'Sign Up',
                           backgroundColor: primaryPurple,
                           textColor: Colors.white,
                           onTap: () {
@@ -147,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (_) => HomeScreen()),
+                                    builder: (_) => LoginScreen()),
                               );
                             }
                           },
@@ -161,7 +186,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             Padding(
                               padding: EdgeInsets.symmetric(horizontal: 8),
                               child: Text(
-                                "Or Login with",
+                                "Or Sign Up with",
                                 style: TextStyle(fontSize: 12),
                               ),
                             ),
