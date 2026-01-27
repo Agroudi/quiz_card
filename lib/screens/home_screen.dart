@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_card/screens/join_screen.dart';
 import 'package:quiz_card/widgets/app_button.dart';
 import 'package:quiz_card/widgets/app_appbar.dart';
 import 'package:quiz_card/widgets/custom_bottom_nav.dart';
@@ -10,7 +11,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF3D5FB),
-      appBar: DefaultAppBar(title: 'Mystic Deck', onBack: () => (), onMenu: () => ()),
+      appBar: DefaultAppBar(title: 'Mystic Deck', onBack: (){} , onMenu: () => ()),
       body: Stack(
         children: [
           Positioned(
@@ -40,7 +41,8 @@ class HomeScreen extends StatelessWidget {
                     text: 'Join Room',
                     backgroundColor: const Color(0xFF7B1FA2),
                     textColor: Colors.white,
-                    onTap: () {},
+                    onTap: () {Navigator.push(
+                        context, MaterialPageRoute(builder: (_) => JoinScreen()));},
                   ),
                   const SizedBox(height: 15),
                   AppButton(
