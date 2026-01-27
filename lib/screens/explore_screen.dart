@@ -36,7 +36,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
           children: [
             const SizedBox(height: 16),
 
-            /// 🔹 Categories
+            /// Categories
             SizedBox(
               height: 40,
               child: ListView.separated(
@@ -59,7 +59,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
             const SizedBox(height: 20),
 
-            /// 🔹 Cards
+            /// Cards
             Expanded(
               child: ListView(
                 children: [
