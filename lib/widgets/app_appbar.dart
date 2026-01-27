@@ -46,7 +46,6 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
 
       actions: [
-        // 👤 Circle Avatar
         Padding(
           padding: const EdgeInsets.only(right: 8),
           child: GestureDetector(
@@ -65,7 +64,6 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
 
-        // ☰ Menu (optional)
         if (onMenu != null)
           IconButton(
             icon: const Icon(Icons.menu, size: 32),

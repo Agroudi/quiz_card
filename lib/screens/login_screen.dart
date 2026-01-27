@@ -35,7 +35,7 @@ class _LoginScreenState extends State<LoginScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Stack(
               children: [
-                // 🌸 Flowers & Lion (UNCHANGED)
+                // left flower
                 Positioned(
                   top: 145,
                   left: -17,
@@ -44,6 +44,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Image.asset('assets/flower.png', width: 190),
                   ),
                 ),
+
+                // right flower
                 Positioned(
                   top: 145,
                   right: -13,
@@ -52,6 +54,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Image.asset('assets/flower.png', width: 190),
                   ),
                 ),
+
+                // lion
                 Positioned(
                   top: 40,
                   left: size.width / 2 - 165,

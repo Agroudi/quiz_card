@@ -37,7 +37,6 @@ class _SignupScreenState extends State<SignupScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Stack(
               children: [
-                // 🌸 Flowers & Lion (UNCHANGED)
                 Positioned(
                   top: 85,
                   left: -17,

@@ -56,7 +56,6 @@ class DefaultFormField extends StatelessWidget {
               borderSide: BorderSide(color: primaryPurple, width: 1.8),
             ),
 
-            // 🔴 THIS FIXES THE ISSUE
             errorBorder: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(9)),
               borderSide: BorderSide(color: Colors.red, width: 1.5),

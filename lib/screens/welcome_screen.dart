@@ -14,13 +14,12 @@ class WelcomeScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          // 🔹 Background color only
           Container(
             width: double.infinity,
             height: double.infinity,
             color: const Color(0xFFF3E5F5),
           ),
-          // 🌸 Left tilted flower
+          // Left flower
           Positioned(
             top: 185,
             left: 7,
@@ -33,7 +32,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
 
-          // 🌸 Right tilted flower
+          // Right flower
           Positioned(
             top: 185,
             right: 13,
@@ -46,7 +45,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
 
-          // 🦁 Lion (center top)
+          // Lion
           Positioned(
             top: 80,
             left: size.width / 2 - 145,
@@ -56,7 +55,7 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ),
 
-          // 🌺 Bottom flower cluster (overlapping like design)
+          // Bottom flower cluster
           Positioned(
             bottom: 90,
             left: -40,
