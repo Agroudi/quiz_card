@@ -12,7 +12,7 @@ Widget homeImageButton({
       width: 95,
       padding: const EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
-        color: const Color(0xFF7B1FA2), // SAME color from your buttons
+        color: const Color(0xFF7B1FA2),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Column(

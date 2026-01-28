@@ -19,14 +19,11 @@ class BottomNavBar extends StatelessWidget {
     return Expanded(
       child: IconButton(
         onPressed: () => onTap(index),
-        icon: Opacity(
-          opacity: isSelected ? 1 : 0.6,
-          child: Image.asset(
-            asset,
-            height: 26,
-            width: 26, // 👈 IMPORTANT
-            fit: BoxFit.contain,
-          ),
+        icon: Image.asset(
+          asset,
+          height: 26,
+          width: 26, // IMPORTANT
+          fit: BoxFit.contain,
         ),
       ),
     );

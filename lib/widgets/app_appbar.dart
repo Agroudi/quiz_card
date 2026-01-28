@@ -30,7 +30,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
 
       leading: onBack != null
           ? IconButton(
-        icon: Image.asset('assets/back.png'),
+        icon: Image.asset('assets/appBar_icons/back.png'),
         color: Colors.white,
         onPressed: onBack,
       )
@@ -51,7 +51,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
           child: GestureDetector(
             onTap: onAvatarTap,
             child: CircleAvatar(
-              radius: 18, // matches design
+              radius: 18,
               backgroundColor: Colors.white,
               backgroundImage: avatarImage,
               child: avatarImage == null
@@ -66,7 +66,7 @@ class DefaultAppBar extends StatelessWidget implements PreferredSizeWidget {
 
         if (onMenu != null)
           IconButton(
-            icon: Image.asset('assets/menu.png'),
+            icon: Image.asset('assets/appBar_icons/menu.png'),
             color: Colors.white,
             onPressed: onMenu,
           ),

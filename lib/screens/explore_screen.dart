@@ -64,25 +64,25 @@ class _ExploreScreenState extends State<ExploreScreen> {
               child: ListView(
                 children: [
                   ExploreCard(
-                    imagePath: 'assets/explore_images/medieval.jpg',
+                    imagePath: 'assets/history_themes/medieval.jpg',
                     title: 'Medieval History',
                     onTap: () {},
                   ),
                   SizedBox(height: 21),
                   ExploreCard(
-                    imagePath: 'assets/explore_images/heritage.png',
+                    imagePath: 'assets/history_themes/heritage.png',
                     title: 'Heritage Tourism',
                     onTap: () {},
                   ),
                   SizedBox(height: 21),
                   ExploreCard(
-                    imagePath: 'assets/explore_images/constitution.png',
+                    imagePath: 'assets/history_themes/constitution.png',
                     title: 'Constitution',
                     onTap: () {},
                   ),
                   SizedBox(height: 21),
                   ExploreCard(
-                    imagePath: 'assets/explore_images/freedom.png',
+                    imagePath: 'assets/history_themes/freedom.png',
                     title: 'Freedom Struggle',
                     isLocked: true,
                     onTap: () {},
