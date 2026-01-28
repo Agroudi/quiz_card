@@ -67,6 +67,7 @@ flutter:
     - assets/appBar_icons/
     - assets/bottomNavBar_icons/
     - assets/home_iconButtons/
+    - assets/user.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
