@@ -17,6 +17,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: ScoreScreen());
+    return MaterialApp(
+      theme: ThemeData(fontFamily: 'Inter'),
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen());
   }
 }

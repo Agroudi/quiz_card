@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:quiz_card/widgets/custom_app_bar%20(2).dart';
+import 'package:quiz_card/widgets/app_appbar.dart';
 import 'package:quiz_card/widgets/user_widget.dart';
 
 class ScoreScreen extends StatelessWidget {
@@ -11,87 +10,109 @@ class ScoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFF3d9FA),
-      appBar: CustomAppBar(title: 'Odisha'),
+      appBar: DefaultAppBar(
+        title: 'Odisha',
+        subtitle: 'States and Cities',
+        avatarImage: const AssetImage('assets/users_avatars/user_girl1.png'),
+        onBack: () {},
+        onMenu: () {},
+      ),
       body: Column(
         children: [
-          SizedBox(height: 40),
+          SizedBox(height: 200),
           Center(
             child: Stack(
               clipBehavior: Clip.none,
               children: [
+                Positioned(
+                top: -63,
+                left: -15,
+                width: 100,
+                height: 100,
+                child: RotationTransition(
+                    turns: const AlwaysStoppedAnimation(-40 / 800),
+                    child: Image.asset('assets/crown.png')
+                ),
+              ),
                 UserWidget(
-                  name: 'You won!!',
+                  text: 'You won!!',
                   score: '8/8',
-                  radius: 75,
+                  radius: 105,
                   nameSize: 35,
                   scoreSize: 20,
-                ),
-                Positioned(
-                  top: -30,
-                  left: -15,
-                  child: RotationTransition(
-                    turns: const AlwaysStoppedAnimation(-40 / 360),
-                    child: FaIcon(
-                      FontAwesomeIcons.crown,
-                      size: 60,
-                      color: Colors.yellow[700],
-                    ),
-                  ),
+                  userImage: AssetImage('assets/users_avatars/user_girl1.png'),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 120),
+          SizedBox(height: 26),
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               UserWidget(
-                name: 'User 1',
+                userImage: AssetImage('assets/users_avatars/user_girl2.png'),
+                text: 'User 2',
                 score: '7/8',
-                radius: 35,
+                radius: 42,
                 nameSize: 17,
-                scoreSize: 12,
+                scoreSize: 14,
               ),
               UserWidget(
-                name: 'User 1',
+                userImage: AssetImage('assets/users_avatars/user_girl3.png'),
+                text: 'User 3',
                 score: '7/8',
-                radius: 35,
+                radius: 42,
                 nameSize: 17,
-                scoreSize: 12,
+                scoreSize: 14,
               ),
               UserWidget(
-                name: 'User 1',
+                userImage: AssetImage('assets/users_avatars/user_girl4.png'),
+                text: 'User 4',
                 score: '7/8',
-                radius: 35,
+                radius: 42,
                 nameSize: 17,
-                scoreSize: 12,
+                scoreSize: 14,
               ),
             ],
           ),
-          Spacer(),
-          Padding(
-            padding: EdgeInsets.all(30),
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.purple[200],
-                minimumSize: Size(double.infinity, 60),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-              onPressed: () {},
-              child: Text(
-                'HOME',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.purple,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
+        ],
+      ),
+      bottomSheet: Container(
+        padding: const EdgeInsets.fromLTRB(140, 16, 140, 40),
+        decoration: BoxDecoration(
+          color: const Color(0xFFF3d9FA),
+          borderRadius: const BorderRadius.vertical(
+            top: Radius.circular(30),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.12),
+              blurRadius: 20,
+              offset: const Offset(0, -6),
+            ),
+          ],
+        ),
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.purple[200],
+            minimumSize: const Size(double.infinity, 60),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+            elevation: 0, // important: shadow comes from container
+          ),
+          onPressed: () {},
+          child: const Text(
+            'HOME',
+            style: TextStyle(
+              fontSize: 25,
+              fontFamily: 'Inter-Regular',
+              color: Colors.purple,
+              fontWeight: FontWeight.bold,
             ),
           ),
-        ],
+        ),
       ),
     );
   }

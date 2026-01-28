@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 
 class UserWidget extends StatelessWidget {
-  final String name;
-  final String score;
+  final String text;
+  final String? score;
   final double radius;
   final double nameSize;
   final double scoreSize;
+  AssetImage userImage;
 
-  const UserWidget({
+  UserWidget({
     super.key,
-    required this.name,
-    required this.score,
+    required this.userImage,
+    required this.text,
+    this.score,
     required this.radius,
     required this.nameSize,
     required this.scoreSize,
@@ -24,25 +26,26 @@ class UserWidget extends StatelessWidget {
           radius: radius + 4,
           backgroundColor: Colors.purple[800],
           child: CircleAvatar(
+            foregroundImage: userImage,
             radius: radius,
-            backgroundImage: AssetImage('assets/user.jpg'),
+            backgroundColor: Colors.transparent
           ),
         ),
 
         Text(
-          name,
+          text,
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontSize: nameSize,
-            color: Colors.deepPurple,
+            color: Color(0xFF7A1FA0),
           ),
         ),
         Text(
-          score,
+          score ?? '',
           style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: scoreSize,
-            color: Colors.blue,
+            color: Color(0xFFB35ACA),
           ),
         ),
       ],

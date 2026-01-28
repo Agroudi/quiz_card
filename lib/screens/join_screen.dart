@@ -1,10 +1,9 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:quiz_card/screens/home_screen.dart';
-import 'package:quiz_card/screens/welcome_screen.dart';
 import 'package:quiz_card/widgets/app_appbar.dart';
 import 'package:quiz_card/widgets/app_formfield.dart';
 import 'package:quiz_card/widgets/app_button.dart';
+import 'package:quiz_card/screens/waiting_screen.dart';
 
 class JoinScreen extends StatefulWidget {
   const JoinScreen({super.key});
@@ -25,27 +24,35 @@ class _JoinScreenState extends State<JoinScreen> {
 
   void _joinRoom() {
     if (_formKey.currentState!.validate()) {
-      // ✅ Valid room code
-      debugPrint('Joining room: ${_roomCodeController.text}');
+      final roomCode = _roomCodeController.text;
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (_) => WaitingScreen(roomCode: roomCode),
+        ),
+      );
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: DefaultAppBar(title: 'Mystic Deck', onBack: () => {Navigator.push(
-          context, MaterialPageRoute(builder: (_) => HomeScreen()))}, onMenu: () => ()),
+      appBar: DefaultAppBar(
+        title: 'Mystic Deck',
+        onBack: () => Navigator.pop(context),
+        onMenu: () {},
+      ),
       body: Stack(
         alignment: Alignment.center,
         children: [
-          // Background
           Container(
             width: double.infinity,
             height: double.infinity,
             color: const Color(0xFFF3E5F5),
           ),
 
-          // = FORM =
+          /// FORM
           Positioned(
             top: 420,
             left: 24,
@@ -72,9 +79,7 @@ class _JoinScreenState extends State<JoinScreen> {
                       return null;
                     },
                   ),
-
                   const SizedBox(height: 20),
-
                   AppButton(
                     onTap: _joinRoom,
                     text: 'Join Room',
@@ -85,9 +90,8 @@ class _JoinScreenState extends State<JoinScreen> {
               ),
             ),
           ),
-          // ========================================
 
-          // Left kite
+          /// DECOR
           Positioned(
             height: 120,
             width: 120,
@@ -98,8 +102,6 @@ class _JoinScreenState extends State<JoinScreen> {
               child: Image.asset('assets/kite.png'),
             ),
           ),
-
-          // Center kite
           Positioned(
             height: 330,
             width: 330,
@@ -110,8 +112,6 @@ class _JoinScreenState extends State<JoinScreen> {
               child: Image.asset('assets/kite.png'),
             ),
           ),
-
-          // Right kite
           Positioned(
             height: 120,
             width: 120,
@@ -120,54 +120,6 @@ class _JoinScreenState extends State<JoinScreen> {
             child: Transform.rotate(
               angle: pi / 3,
               child: Image.asset('assets/kite.png'),
-            ),
-          ),
-
-          // Bottom flower cluster
-          Positioned(
-            bottom: 90,
-            left: -40,
-            child: SizedBox(
-              width: 420,
-              height: 220,
-              child: Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  Positioned(
-                    left: -65,
-                    bottom: -190,
-                    child: Transform.rotate(
-                      angle: -pi / 150,
-                      child: Image.asset(
-                        'assets/flower.png',
-                        width: 350,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 220,
-                    bottom: -190,
-                    child: Transform.rotate(
-                      angle: pi / 150,
-                      child: Image.asset(
-                        'assets/flower.png',
-                        width: 350,
-                      ),
-                    ),
-                  ),
-                  Positioned(
-                    left: 90,
-                    bottom: -240,
-                    child: Transform.rotate(
-                      angle: -pi / 150,
-                      child: Image.asset(
-                        'assets/flower.png',
-                        width: 330,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
             ),
           ),
         ],

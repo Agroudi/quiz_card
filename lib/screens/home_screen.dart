@@ -21,7 +21,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFF3D5FB),
-      appBar: DefaultAppBar(title: 'Mystic Deck', onBack: (){} , onMenu: () => ()),
+      appBar: DefaultAppBar(
+        title: 'Explore Themes',
+        avatarImage: const AssetImage('assets/users_avatars/user_girl1.png'),
+        onBack: () {},
+        onMenu: () {},
+      ),
       body: Stack(
         children: [
 
