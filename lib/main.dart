@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:quiz_card/screens/select_screen.dart';
 import 'package:quiz_card/screens/splash_screen.dart';
 
 void main() {
@@ -14,6 +13,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(fontFamily: 'Inter-Regular'),
         debugShowCheckedModeBanner: false,
-        home: SelectScreen());
+        home: SplashScreen());
   }
 }
