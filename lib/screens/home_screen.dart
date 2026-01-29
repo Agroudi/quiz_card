@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFF3D5FB),
       appBar: DefaultAppBar(
-        title: 'Explore Themes',
+        title: 'Mystic Deck',
         avatarImage: const AssetImage('assets/users_avatars/user_girl1.png'),
         onBack: () {},
         onMenu: () {},

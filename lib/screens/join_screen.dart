@@ -40,7 +40,8 @@ class _JoinScreenState extends State<JoinScreen> {
     return Scaffold(
       appBar: DefaultAppBar(
         title: 'Mystic Deck',
-        onBack: () => Navigator.pop(context),
+        avatarImage: const AssetImage('assets/users_avatars/user_girl1.png'),
+        onBack: () {},
         onMenu: () {},
       ),
       body: Stack(
