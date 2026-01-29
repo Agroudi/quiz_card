@@ -137,11 +137,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     clipBehavior: Clip.antiAlias,
                     child: Column(
                       children: [
-                        _buildUserRow('Ahmed', '700', true),
-                        _buildUserRow('Abdelrahman', '500', false),
-                        _buildUserRow('Mario', '500', true),
-                        _buildUserRow('Wael', '400', false),
-                        _buildUserRow('Nader', '300', true),
+                        _buildUserRow('Ahmed', '700', true, 'assets/users_avatars/user_girl1.png'),
+                        _buildUserRow('Abdelrahman', '500', false, 'assets/users_avatars/user_girl2.png'),
+                        _buildUserRow('Mario', '500', true, 'assets/users_avatars/user_girl3.png'),
+                        _buildUserRow('Wael', '400', false, 'assets/users_avatars/user_girl4.png'),
+                        _buildUserRow('Nader', '300', true, 'assets/users_avatars/user_girl1.png'),
                       ],
                     ),
                   ),
@@ -188,16 +188,21 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildUserRow(String name, String score, bool isDark) {
+  Widget _buildUserRow(
+      String name,
+      String score,
+      bool isDark,
+      String avatarPath,
+      ) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 12),
       color: isDark ? const Color(0xFFE1BEE7) : const Color(0xFFF3E5F5),
       child: Row(
         children: [
-          const CircleAvatar(
-            radius: 20,
-            backgroundColor: Color(0xFF7B1FA2),
-            child: Icon(Icons.person, color: Colors.white),
+          CircleAvatar(
+            radius: 22,
+            backgroundColor: Colors.white,
+            backgroundImage: AssetImage(avatarPath),
           ),
           const SizedBox(width: 20),
           Text(

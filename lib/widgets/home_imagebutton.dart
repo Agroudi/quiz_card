@@ -28,7 +28,7 @@ Widget homeImageButton({
           Text(
             label,
             style: const TextStyle(
-              fontSize: 11,
+              fontSize: 13,
               color: Colors.white,
               fontWeight: FontWeight.w500,
             ),
