@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:quiz_card/screens/home_screen.dart';
 import 'package:quiz_card/widgets/app_appbar.dart';
 import 'package:quiz_card/widgets/user_widget.dart';
 
@@ -14,7 +15,7 @@ class ScoreScreen extends StatelessWidget {
         title: 'Odisha',
         subtitle: 'States and Cities',
         avatarImage: const AssetImage('assets/users_avatars/user_girl1.png'),
-        onBack: () {},
+        onBack: () {Navigator.pop(context);},
         onMenu: () {},
       ),
       body: Column(
@@ -102,7 +103,7 @@ class ScoreScreen extends StatelessWidget {
             ),
             elevation: 0, // important: shadow comes from container
           ),
-          onPressed: () {},
+          onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));},
           child: const Text(
             'HOME',
             style: TextStyle(
