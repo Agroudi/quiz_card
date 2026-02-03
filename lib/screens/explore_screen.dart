@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quiz_card/screens/select_screen.dart';
 import 'package:quiz_card/widgets/app_appbar.dart';
 import 'package:quiz_card/widgets/app_bottombar.dart';
 import 'package:quiz_card/widgets/category_button.dart';
@@ -70,7 +71,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
         ExploreCardData(
           imagePath: 'assets/geography_themes/geography_1.png',
           title: 'States and Cities',
-          onTap: () {},
+          onTap: () {Navigator.push(
+            context, MaterialPageRoute(builder: (_) => SelectScreen()));},
         ),
         ExploreCardData(
           imagePath: 'assets/geography_themes/geography_2.png',

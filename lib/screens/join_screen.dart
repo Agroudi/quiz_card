@@ -53,6 +53,60 @@ class _JoinScreenState extends State<JoinScreen> {
             color: const Color(0xFFF3E5F5),
           ),
 
+          // Bottom flower cluster
+          Positioned(
+            bottom: 90,
+            left: -40,
+            child: SizedBox(
+              width: 420,
+              height: 220,
+              child: Stack(
+                clipBehavior: Clip.none,
+                children: [
+
+                  // Left flower
+                  Positioned(
+                    left: -65,
+                    bottom: -190,
+                    child: Transform.rotate(
+                      angle: -pi / 150,
+                      child: Image.asset(
+                          'assets/flower.png',
+                          width: 350
+                      ),
+                    ),
+                  ),
+
+                  // Right flower
+                  Positioned(
+                    left: 220,
+                    bottom: -190,
+                    child: Transform.rotate(
+                      angle: pi / 150,
+                      child: Image.asset(
+                        'assets/flower.png',
+                        width: 350,
+                      ),
+                    ),
+                  ),
+
+                  // Middle flower (on top)
+                  Positioned(
+                    left: 90,
+                    bottom: -240,
+                    child: Transform.rotate(
+                      angle: -pi / 150,
+                      child: Image.asset(
+                        'assets/flower.png',
+                        width: 330,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
           /// FORM
           Positioned(
             top: 420,

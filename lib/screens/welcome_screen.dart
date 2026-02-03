@@ -74,7 +74,7 @@ class WelcomeScreen extends StatelessWidget {
                       angle: -pi / 150,
                       child: Image.asset(
                         'assets/flower.png',
-                        width: 350,
+                        width: 350
                       ),
                     ),
                   ),
